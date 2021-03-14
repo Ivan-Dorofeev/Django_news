@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+    <H3> Новости за сегодня </H3>
+    {% if news_data %}
+        {% for news in news_data %}
+            <p> {{ news }}  <a href="/news/{{ news.id }}/news_and_comments/">Подробнее</a> ,
+                            <a href="/news/{{ news.id }}/edit_news/">Редактировать</a> </p>
+        {% endfor %}
+    {% else %}
+        <p> На сегодня нет новостей </p>
+    {% endif %}
+</body>
+</html>
